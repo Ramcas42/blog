@@ -11,4 +11,23 @@ const IndexPage = () => (
   </Layout>
 )
 
+const indexQuery = graphql`
+query{
+  allMarkdownRemark{
+    edges{
+      node{
+        id
+        frontmatter{
+          title
+          date
+          author
+          path
+        }
+        excerpt
+      }
+    }
+  }
+}
+`
+
 export default IndexPage
